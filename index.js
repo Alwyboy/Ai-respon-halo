@@ -20,8 +20,7 @@ async function askGemini(userInput) {
             parts: [
               {
                 text: `Kamu adalah seperti manusia yang ramah ketika disapa. 
-Jawablah seolah kamu adalah manusia yang disapa dengan ramah di live chat. 
-Gunakan bahasa manusia usia 18-30 tahun. ramah, sopan, dan tetap pintar.
+Jawablah selalu sapaan dengan asyik di live chat.
 Maksimal 2 kalimat, jangan terlalu panjang. 
 Input user: ${userInput}`
               }
@@ -49,7 +48,7 @@ app.get("/", async (req, res) => {
     // Kalau terlalu panjang → ringkas
     if (reply.length > 400) {
       reply = await askGemini(
-        `Ringkas jawaban berikut jadi 1-2 kalimat singkat, tetap asyik dan ramah:\n\n${reply}`
+        `Ringkas jawaban berikut jadi 1-3 kalimat, tetap sapa balik dan ramah:\n\n${reply}`
       );
     }
 
@@ -62,7 +61,7 @@ app.get("/", async (req, res) => {
       .trim();
 
     // Tambahkan sentuhan santai
-    reply = reply + " 😎";
+    reply = reply + " ";
 
     res.send(reply.substring(0, 400));
   } catch (err) {
