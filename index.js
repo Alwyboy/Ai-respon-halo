@@ -19,7 +19,7 @@ async function askGemini(userInput) {
             role: "user",
             parts: [
               {
-                text: `Kamu adalah seperti manusia yang ramah ketika disapa. 
+                text: `Kamu adalah teman yang selalu menyapa balik.
 Jawablah selalu sapaan dengan asyik di live chat.
 Maksimal 2 kalimat, jangan terlalu panjang. 
 Input user: ${userInput}`
